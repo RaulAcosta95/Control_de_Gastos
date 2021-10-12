@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(1, 113, 189);
+    
+}
+* {
+    margin:0;
+    padding:0;
+}
+#PrincipalArticle{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
