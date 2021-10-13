@@ -28,6 +28,7 @@ export class GastoEnListaComponent extends LitElement{
                 .gastoEnListaComponent *{
                     margin:0;
                     padding:0;
+                    transition:0.5s;
                 }
                 .gastoEnListaComponent{
                     background-color: rgb(131, 204, 253);
@@ -94,13 +95,26 @@ export class GastoEnListaComponent extends LitElement{
 
     _eliminarGasto(){
         console.log('Eliminando gasto ' +this.id);
+        this._añadeEfectoBorrar()
         this.dispatchEvent( new CustomEvent('EliminarDatosGasto', {
             detail: {data: this.id},
             bubbles: true,
             composed:true
         }));
     }
+    _añadeEfectoBorrar(){
+        let gastoEnListaComponent = this.shadowRoot.querySelector('.gastoEnListaComponent');
+        this.tituloGastoActual="";
+        this.descripcionGastoActual="";
+        this.cantidadGastoActual="";
+        gastoEnListaComponent.setAttribute("style", `
+            width:0px;
+            height:20px;
+            background-color:rgba(172, 128, 128,.0);
+            transition:0.5s;
+        `);
 
+    }
     _mostrarComponenteVerDetalleGasto(){
         let OverArticle = document.getElementById('OverArticle');
         setTimeout(() => {            

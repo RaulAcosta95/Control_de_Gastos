@@ -12,10 +12,13 @@ export class ListaGastosComponent extends LitElement{
         })
         
         addEventListener('EliminarDatosGasto', (data)=>{
-            this._despintarComponenteGasto(data.detail.data);
+            setTimeout(() => {
+                this._despintarComponenteGasto(data.detail.data);
+            }, 500);
         })
 
         addEventListener('ModificarDatosGasto', (data)=>{
+            this._despintarComponenteGasto(data.detail.data.idAModificar, true);
             this._modificarALocalStorage(data);
         })
         
@@ -79,16 +82,21 @@ export class ListaGastosComponent extends LitElement{
         `;
     }
 
-    _despintarComponenteGasto(id){
+    _despintarComponenteGasto(id,modifica){
         console.log('Despintar ' +id);//3gastoId
         //Eliminar de this.allData el elemento cuyo id sea = id
 
         let listaGastos = this.shadowRoot.getElementById('listaGastos');
         let gastoAEliminar = this.shadowRoot.getElementById(`${id}`);
 
-        listaGastos.removeChild(gastoAEliminar);
+            listaGastos.removeChild(gastoAEliminar);
+
         console.log(id+' Eliminado');
-        this._borrarDeLocalStorage(id)
+        if(modifica){
+            console.log('Solo modifica');
+        } else {
+            this._borrarDeLocalStorage(id)
+        }
 
     }
     _borrarDeLocalStorage(id){
@@ -108,7 +116,26 @@ export class ListaGastosComponent extends LitElement{
     }
 
     _modificarALocalStorage(data){
+        
         console.log(data.detail.data);
+        // this.allData[i]
+        // console.log(this.allData[0]);
+        let idModificado;
+        for (let i = 0; i < this.allData.length; i++) {
+            console.log(this.allData[i].id);
+            if(this.allData[i].id == data.detail.data.idAModificar){
+                console.log(this.allData[i]);
+                idModificado = i;
+                this.allData[i].tituloGastoActual = data.detail.data.nuevoTituloGasto;
+                this.allData[i].descripcionGastoActual = data.detail.data.nuevoDescripciónGasto;
+                this.allData[i].cantidadGastoActual = data.detail.data.nuevoCantidadGasto;
+                i = this.allData.length;
+            }
+        }
+
+        localStorage.setItem('gastosLocalStorage',JSON.stringify(this.allData));
+
+        this._pintarComponentesGasto(this.allData[idModificado])
     }
 
 }
