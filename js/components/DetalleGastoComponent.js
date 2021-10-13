@@ -115,7 +115,7 @@ export class DetalleGastoComponent extends LitElement{
                     <h4>CANTIDAD</h4>
                     <p>$${this.cantidadGastoActual}</p>
                 <div id="contenedorBoton">
-                    <button @click=${this._añadirNuevoGasto} id="botonModificarGasto">Modificar</button>
+                    <button @click=${this._modificarGasto} id="botonModificarGasto">Modificar</button>
                 </div>
         </div>
         `
@@ -126,6 +126,16 @@ export class DetalleGastoComponent extends LitElement{
         setTimeout(() => {
                 OverArticle.innerHTML = ``;
         }, 300);
+    }
+
+    _modificarGasto(){
+        let OverArticle = document.getElementById('OverArticle');
+        setTimeout(() => {            
+            OverArticle.innerHTML = ``;
+            OverArticle.innerHTML = `
+                <modificar-gasto tituloGastoActual="${this.tituloGastoActual}" descripcionGastoActual="${this.descripcionGastoActual}" cantidadGastoActual="${this.cantidadGastoActual}" id="${this.id}"></modificar-gasto>
+            `;
+        }, 500);
     }
 }
 customElements.define('detalle-gasto', DetalleGastoComponent);

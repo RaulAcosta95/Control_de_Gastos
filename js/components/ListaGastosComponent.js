@@ -15,6 +15,9 @@ export class ListaGastosComponent extends LitElement{
             this._despintarComponenteGasto(data.detail.data);
         })
 
+        addEventListener('ModificarDatosGasto', (data)=>{
+            this._modificarALocalStorage(data);
+        })
         
     }
 
@@ -102,6 +105,10 @@ export class ListaGastosComponent extends LitElement{
         }
 
         localStorage.setItem('gastosLocalStorage',JSON.stringify(this.allData));
+    }
+
+    _modificarALocalStorage(data){
+        console.log(data.detail.data);
     }
 
 }
