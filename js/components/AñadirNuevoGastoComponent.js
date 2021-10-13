@@ -130,13 +130,7 @@ export class AñadirNuevoGastoComponent extends LitElement{
         let OverArticle = document.getElementById('OverArticle');
 
         setTimeout(() => {
-            if (OverArticle.hasChildNodes()){
                 OverArticle.innerHTML = ``;
-            }else {
-                OverArticle.innerHTML = `
-                    <añadir-nuevo-gasto></añadir-nuevo-gasto>
-                `;
-            }
         }, 300);
 
     }

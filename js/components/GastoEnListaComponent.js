@@ -51,6 +51,9 @@ export class GastoEnListaComponent extends LitElement{
                     display: flex;
                     align-items: center;
                 }
+                .gastoEnListaComponent:active{
+                    background-color: rgb(185, 222, 247);
+                }
                 .gastoEnListaComponent .contenedorInfo{
                     width: 80%;
                 }
@@ -76,7 +79,7 @@ export class GastoEnListaComponent extends LitElement{
                 }
             </style>
             <div class="gastoEnListaComponent">
-                <div class="contenedorInfo">
+                <div @click=${this._mostrarComponenteVerDetalleGasto} class="contenedorInfo">
                     <h3>${this.tituloGastoActual} </h3>
                     <p>$${this.cantidadGastoActual}</p>
                 </div>
@@ -96,6 +99,19 @@ export class GastoEnListaComponent extends LitElement{
             bubbles: true,
             composed:true
         }));
+    }
+
+    _mostrarComponenteVerDetalleGasto(){
+        let OverArticle = document.getElementById('OverArticle');
+        setTimeout(() => {            
+            if (OverArticle.hasChildNodes()){
+                OverArticle.innerHTML = ``;
+            }else {
+                OverArticle.innerHTML = `
+                <detalle-gasto tituloGastoActual="${this.tituloGastoActual}" descripcionGastoActual="${this.descripcionGastoActual}" cantidadGastoActual="${this.cantidadGastoActual}" id="${this.id}"></detalle-gasto>
+                `;
+            }
+        }, 500);
     }
 }
 customElements.define('gasto-en-lista', GastoEnListaComponent);

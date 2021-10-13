@@ -62,7 +62,6 @@ export class BotonNuevoGastoComponent extends LitElement{
     }
 
     _mostrarComponenteAñadirNuevoGastoComponent(){
-        console.log('_mostrarComponenteAñadirNuevoGastoComponent');
         let OverArticle = document.getElementById('OverArticle');
         setTimeout(() => {            
             if (OverArticle.hasChildNodes()){
