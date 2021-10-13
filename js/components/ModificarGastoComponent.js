@@ -125,6 +125,16 @@ export class ModificarGastoComponent extends LitElement{
         `
     }
 
+    _cambiarTituloGastoActual(e){
+        this.tituloGastoActual = e.target.value;
+    }
+    _cambiarDescripcionGastoActual(e){
+        this.descripcionGastoActual = e.target.value;
+    }
+    _cambiarCantidadGastoActual(e){
+        this.cantidadGastoActual = e.target.value;
+    }
+    
     _quitarComponenteModificaGastoComponent(){
         let OverArticle = document.getElementById('OverArticle');
 
