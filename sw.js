@@ -1,10 +1,10 @@
-const STATIC_CACHE_NAME = 'site-static-v2';
-const DYNAMIC_CACHE_NAME = 'site-dynamic-v2';
+const STATIC_CACHE_NAME = 'site-static-v1';
+const DYNAMIC_CACHE_NAME = 'site-dynamic-v1';
 //No hay Package.json
 //El AUDIT REPORT LIGHTHOUSE no se realiza si hay algún error
 const ASSETS = [//Los ASSETS son archivos en ruta para pre-cargar
     '/',
-    '/js/app.js',
+    '/app.js',
     '/css/global.css',
     '/fallback.html',
     '/images/404-Error-bro.svg',
