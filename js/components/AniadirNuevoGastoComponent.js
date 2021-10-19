@@ -1,6 +1,5 @@
 import { LitElement, html } from 'https://unpkg.com/lit-element?module';
-
-export class AñadirNuevoGastoComponent extends LitElement{
+export class AniadirNuevoGastoComponent extends LitElement{
     constructor(){
         super();
 
@@ -16,11 +15,11 @@ export class AñadirNuevoGastoComponent extends LitElement{
 
     connectedCallback(){
         super.connectedCallback();
-        console.log('Connected Callback AñadirNuevoGastoComponent');
+        console.log('Connected Callback AniadirNuevoGastoComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback AñadirNuevoGastoComponent');
+        console.log('Disconnected Callback AniadirNuevoGastoComponent');
     }
 
     render(){
@@ -171,4 +170,4 @@ export class AñadirNuevoGastoComponent extends LitElement{
 
     }
 }
-customElements.define('añadir-nuevo-gasto', AñadirNuevoGastoComponent);
+customElements.define('añadir-nuevo-gasto', AniadirNuevoGastoComponent);

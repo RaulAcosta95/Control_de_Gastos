@@ -1,5 +1,4 @@
 import { LitElement, html } from 'https://unpkg.com/lit-element?module';
-
 export class BotonNuevoGastoComponent extends LitElement{
     constructor(){
         super();

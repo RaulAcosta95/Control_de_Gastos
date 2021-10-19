@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/icon-128x128.ico">
+    <title>Fallback</title>
+    <link rel="shortcut icon" href="./images/icons/icon-128x128.ico">
+    <link rel="stylesheet" href="./css/global.css">
+
+    <meta name="theme-color" content="rgb(1, 113, 189)">
+    <link rel="manifest" href="./manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="./images/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="rgb(1, 113, 189)">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: rgb(255,255,255);
+        }
+        .fallback{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+
+        }
+        h1{
+            width: 100vw;
+            text-align: center;
+            margin-top: 20px;
+        }
+        img{
+            width: 100vw;
+            height: 50vh;
+        }
+        p{
+            width: 100vw;
+        }
+        a{
+            height: 60px;
+            width: 50vw;
+            font-size: 25px;
+            background-color: rgb(204, 43, 43);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            cursor:pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border: 0px solid #000000;
+            -webkit-box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.75);
+            -moz-box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.75);
+            box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.75);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article class="fallback">
+            <h1>Page Not Found</h1>
+            <img src="/images/404-Error-bro.svg" alt="Opps, page not found">
+            <p>You cannot view this page offline</p>
+            <a href="/">Return</a>
+        </article>
+    </section>
+</body>
+</html>
