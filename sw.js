@@ -1,23 +1,25 @@
-const STATIC_CACHE_NAME = 'site-static-v1';
-const DYNAMIC_CACHE_NAME = 'site-dynamic-v1';
+const STATIC_CACHE_NAME = 'site-static-v2';
+const DYNAMIC_CACHE_NAME = 'site-dynamic-v2';
 //No hay Package.json
 //El AUDIT REPORT LIGHTHOUSE no se realiza si hay algún error
 const ASSETS = [//Los ASSETS son archivos en ruta para pre-cargar
     '/',
+    '/js/app.js',
+    '/css/global.css',
+    '/fallback.html',
+    '/images/404-Error-bro.svg',
+    '/images/icons/icon-128x128.ico',
+    '/images/icons/icon-144x144.png',
+    '/index.html',
+    '/js/components/AniadirNuevoGastoComponent.js',
+    '/js/components/BotonNuevoGastoComponent.js',
+    '/js/components/DetalleGastoComponent.js',
+    '/js/components/GastoEnListaComponent.js',
+    '/js/components/ListaGastosComponent.js',
+    '/js/components/ModificarGastoComponent.js',
+    '/js/modoOffline.js',
     '/manifest.json',
     '/package-lock.json',
-    '/index.html',
-    '/css/global.css',
-    '/js/app.js',
-    '/js/components/BotonNuevoGastoComponent.js',
-    '/js/components/AniadirNuevoGastoComponent.js',
-    '/js/components/ListaGastosComponent.js',
-    '/js/components/GastoEnListaComponent.js',
-    '/js/components/DetalleGastoComponent.js',
-    '/js/components/ModificarGastoComponent.js',
-    'fallback.html',
-    '/js/modoOffline.js',
-    '/images/404-Error-bro.svg',
     '/images/delete.png'
 ]
 
@@ -65,21 +67,21 @@ const ASSETS = [//Los ASSETS son archivos en ruta para pre-cargar
                 bubbles: true,
                 composed:true
             }));
-            // evt.respondWith(
-            //   caches.match(evt.request).then(cacheRes => {
-            //     return cacheRes || fetch(evt.request).then(fetchRes => {
-            //       return caches.open(STATIC_CACHE_NAME).then(cache => {
-            //         cache.put(evt.request.url, fetchRes.clone());
-            //         // check cached items size
-            //         limitCacheSize(STATIC_CACHE_NAME, 60);
-            //         return fetchRes;
-            //       })
-            //     });
-            //   }).catch(() => {
-            //     if(evt.request.url.indexOf('.html') > -1){
-            //       return caches.match('fallback.html');
-            //     } 
-            //   })
-            // );
+            evt.respondWith(
+              caches.match(evt.request).then(cacheRes => {
+                return cacheRes || fetch(evt.request).then(fetchRes => {
+                  return caches.open(STATIC_CACHE_NAME).then(cache => {
+                    cache.put(evt.request.url, fetchRes.clone());
+                    // check cached items size
+                    limitCacheSize(STATIC_CACHE_NAME, 60);
+                    return fetchRes;
+                  })
+                });
+              }).catch(() => {
+                if(evt.request.url.indexOf('.html') > -1){
+                  return caches.match('fallback.html');
+                } 
+              })
+            );
         }
     });
