@@ -91,8 +91,8 @@ export class ModificarGastoComponent extends LitElement{
                     border: 0px solid #000000;
                 }
                 #botonEnviarFormulario{
-                    position:absolute;
-                    bottom:40px;
+                    margin-top:40px;
+
                     width:80vw;
                     height:50px;
                     font-size:22px;
