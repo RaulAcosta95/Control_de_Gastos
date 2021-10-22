@@ -74,6 +74,7 @@ export class AniadirNuevoGastoComponent extends LitElement{
                     flex-wrap:wrap;
                 }
                 #formAñadirNuevoGasto label, #formAñadirNuevoGasto input{
+                    position:relative;
                     display:block;
                     width:80vw;
                     margin-top:30px;
