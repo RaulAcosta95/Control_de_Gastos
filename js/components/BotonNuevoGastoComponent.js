@@ -38,6 +38,8 @@ export class BotonNuevoGastoComponent extends LitElement{
                     background-color: rgb(37, 182, 117);
                     color: rgb(246, 252, 248);
 
+                    cursor:pointer;
+
                     border-radius: 20px 20px 20px 20px;
                     -moz-border-radius: 20px 20px 20px 20px;
                     -webkit-border-radius: 20px 20px 20px 20px;

@@ -41,6 +41,8 @@ export class GastoEnListaComponent extends LitElement{
 
                     font-family: sans-serif;
 
+                    cursor:help;
+
                     border-radius: 10px 10px 10px 10px;
                     -moz-border-radius: 10px 10px 10px 10px;
                     -webkit-border-radius: 10px 10px 10px 10px;

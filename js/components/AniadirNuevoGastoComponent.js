@@ -54,6 +54,8 @@ export class AniadirNuevoGastoComponent extends LitElement{
                     height:30px;
                     width:30px;
 
+                    cursor:pointer;
+
                     -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
@@ -97,6 +99,8 @@ export class AniadirNuevoGastoComponent extends LitElement{
                     font-size:22px;
                     font-family: monospace;
                     font-weight:bold;
+
+                    cursor:pointer;
 
                     background-color: rgb(37, 182, 117);
                     color: rgb(246, 252, 248);
