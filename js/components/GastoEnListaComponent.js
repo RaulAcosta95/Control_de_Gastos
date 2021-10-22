@@ -81,6 +81,11 @@ export class GastoEnListaComponent extends LitElement{
                 .gastoEnListaComponent button img{
                     width:25px;
                 }
+
+                p{
+                    font-weight:bold;
+                    color:rgb(194, 134, 6);
+                }
             </style>
             <div class="gastoEnListaComponent">
                 <div @click=${this._mostrarComponenteVerDetalleGasto} class="contenedorInfo">

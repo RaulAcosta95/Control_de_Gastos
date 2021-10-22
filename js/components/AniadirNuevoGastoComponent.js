@@ -150,9 +150,17 @@ export class AniadirNuevoGastoComponent extends LitElement{
 
     _añadirNuevoGasto(){
         console.log('_añadirNuevoGasto');
-        if(this.tituloGastoActual == null || this.descripcionGastoActual == null || this.cantidadGastoActual == null){
+        if(this.cantidadGastoActual == null){
             console.log('Algun dato null');
             return false;
+        }
+
+        if (this.tituloGastoActual == null) {
+            this.tituloGastoActual = "Titulo Gasto";
+        }
+
+        if (this.descripcionGastoActual == null) {
+            this.descripcionGastoActual = this.tituloGastoActual;
         }
 
         let data = {
