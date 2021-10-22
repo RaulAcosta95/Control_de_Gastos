@@ -92,7 +92,7 @@ export class AniadirNuevoGastoComponent extends LitElement{
                     border: 0px solid #000000;
                 }
                 #botonEnviarFormulario{
-                    position:absolute;
+                    position:fixed;
                     bottom:40px;
                     width:80vw;
                     height:50px;
