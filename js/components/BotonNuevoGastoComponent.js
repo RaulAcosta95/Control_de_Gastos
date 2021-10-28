@@ -24,7 +24,6 @@ export class BotonNuevoGastoComponent extends LitElement{
             <style>
                 #BotonNuevoGastoComponent{
                     margin-top:20px;
-                    width:100vw;
                     display:flex;
                     justify-content:center;
                 }
