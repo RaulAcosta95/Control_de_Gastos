@@ -67,7 +67,6 @@ export class ModificarGastoComponent extends LitElement{
                 }
 
                 #formModificaGasto{
-                    margin-top:30px;
                     display:flex;
                     justify-content:center;
                     flex-wrap:wrap;
@@ -108,6 +107,12 @@ export class ModificarGastoComponent extends LitElement{
                     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                 }
+                @media screen and (min-width: 768px){
+                    #modificaGastoComponent #buttonX{
+                        position:absolute;
+                        right:30px;
+                    }
+                }                    
             </style>
             <div id="modificaGastoComponent">
                 <button @click=${this._quitarComponenteModificaGastoComponent} id="buttonX">X</button>

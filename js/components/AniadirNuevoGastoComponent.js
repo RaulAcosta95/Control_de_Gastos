@@ -68,8 +68,7 @@ export class AniadirNuevoGastoComponent extends LitElement{
                 }
 
                 #formAñadirNuevoGasto{
-                    margin-top:30px;
-                    display:flex;
+                        display:flex;
                     justify-content:center;
                     flex-wrap:wrap;
                 }
@@ -110,6 +109,12 @@ export class AniadirNuevoGastoComponent extends LitElement{
                     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                 }
+                @media screen and (min-width: 768px){
+                    #AñadirNuevoGastoComponent #buttonX{
+                        position:absolute;
+                        right:30px;
+                    }
+                } 
             </style>
             <div id="AñadirNuevoGastoComponent">
                 <button @click=${this._quitarComponenteAñadirNuevoGastoComponent} id="buttonX">X</button>

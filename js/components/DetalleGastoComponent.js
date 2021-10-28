@@ -108,6 +108,12 @@ export class DetalleGastoComponent extends LitElement{
                     -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
                 }
+                @media screen and (min-width: 768px){
+                    #DetalleGastoComponent #buttonX{
+                        position:absolute;
+                        right:30px;
+                    }
+                } 
             </style>
             <div id="DetalleGastoComponent">
                 <button @click=${this._quitarComponenteDetalleGastoComponent} id="buttonX">X</button>

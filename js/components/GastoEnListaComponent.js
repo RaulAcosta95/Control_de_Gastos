@@ -74,12 +74,13 @@ export class GastoEnListaComponent extends LitElement{
                 .gastoEnListaComponent button{
                     background-color:rgba(172, 128, 128,.0);
                     margin: 10px;
+                    margin-right:20px;
                     border:none;
                     cursor:pointer;
                     width:25px;
                 }
                 .gastoEnListaComponent button img{
-                    width:25px;
+                    width:30px;
                 }
 
                 p{
