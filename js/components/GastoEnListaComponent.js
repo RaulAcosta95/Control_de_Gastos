@@ -59,13 +59,17 @@ export class GastoEnListaComponent extends LitElement{
                     background-color: rgb(185, 222, 247);
                 }
                 .gastoEnListaComponent .contenedorInfo{
-                    width: 80%;
+                    width: 90%;
+                }
+                .gastoEnListaComponent .contenedorInfo:hover{
+                    background-color: rgb(193, 228, 252);
+
                 }
                 .gastoEnListaComponent .contenedorInfo *{
                     margin:10px;
                 }
                 .gastoEnListaComponent .contenedorBoton{
-                    width: 20%;
+                    width: 10%;
                     height: 100%;
                     display: flex;
                     justify-content:flex-end;
