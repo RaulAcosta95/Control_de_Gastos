@@ -16,11 +16,11 @@ export class GastoEnListaComponent extends LitElement{
 
     connectedCallback(){
         super.connectedCallback();
-        console.log('Connected Callback GastoEnListaComponent');
+        // console.log('Connected Callback GastoEnListaComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback GastoEnListaComponent');
+        // console.log('Disconnected Callback GastoEnListaComponent');
     }
 
     render(){
@@ -107,19 +107,26 @@ export class GastoEnListaComponent extends LitElement{
     }
 
     _eliminarGasto(){
-        console.log('Eliminando gasto ' +this.id);
-        this._añadeEfectoBorrar()
-        this.dispatchEvent( new CustomEvent('EliminarDatosGasto', {
-            detail: {data: this.id},
-            bubbles: true,
-            composed:true
-        }));
+        this._añadeEfectoBorrar();
+
+        setTimeout(() => {
+            
+            this.dispatchEvent( new CustomEvent('EliminarDatosGasto', {
+                detail: {data: this.id},
+                bubbles: true,
+                composed:true
+            }));
+
+        }, 500);
     }
+
     _añadeEfectoBorrar(){
         let gastoEnListaComponent = this.shadowRoot.querySelector('.gastoEnListaComponent');
+
         this.tituloGastoActual="";
         this.descripcionGastoActual="";
         this.cantidadGastoActual="";
+
         gastoEnListaComponent.setAttribute("style", `
             width:0px;
             height:20px;
@@ -130,6 +137,8 @@ export class GastoEnListaComponent extends LitElement{
     }
     _mostrarComponenteVerDetalleGasto(){
         let OverArticle = document.getElementById('OverArticle');
+
+        //Aparece el componente que muestra el detalle del gasto
         setTimeout(() => {            
             if (OverArticle.hasChildNodes()){
                 OverArticle.innerHTML = ``;

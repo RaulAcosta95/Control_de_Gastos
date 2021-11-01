@@ -2,7 +2,6 @@ import { LitElement, html } from 'https://unpkg.com/lit-element?module';
 export class AniadirNuevoGastoComponent extends LitElement{
     constructor(){
         super();
-
     }
 
     static get Properties(){
@@ -15,11 +14,11 @@ export class AniadirNuevoGastoComponent extends LitElement{
 
     connectedCallback(){
         super.connectedCallback();
-        console.log('Connected Callback AniadirNuevoGastoComponent');
+        // console.log('Connected Callback AniadirNuevoGastoComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback AniadirNuevoGastoComponent');
+        // console.log('Disconnected Callback AniadirNuevoGastoComponent');
     }
 
     render(){
@@ -135,15 +134,6 @@ export class AniadirNuevoGastoComponent extends LitElement{
         `
     }
 
-    _quitarComponenteAñadirNuevoGastoComponent(){
-        let OverArticle = document.getElementById('OverArticle');
-
-        setTimeout(() => {
-                OverArticle.innerHTML = ``;
-        }, 300);
-
-    }
-
     _cambiarTituloGastoActual(e){
         this.tituloGastoActual = e.target.value;
     }
@@ -155,9 +145,8 @@ export class AniadirNuevoGastoComponent extends LitElement{
     }
 
     _añadirNuevoGasto(){
-        console.log('_añadirNuevoGasto');
         if(this.cantidadGastoActual == null){
-            console.log('Algun dato null');
+            alert("Por favor, añade una cantidad");
             return false;
         }
 
@@ -182,10 +171,18 @@ export class AniadirNuevoGastoComponent extends LitElement{
             composed:true
         }));
 
+        this._quitarComponenteAñadirNuevoGastoComponent();
+
+    }
+    
+    _quitarComponenteAñadirNuevoGastoComponent(){
+        let OverArticle = document.getElementById('OverArticle');
+
         setTimeout(() => {
-            this._quitarComponenteAñadirNuevoGastoComponent();
+                OverArticle.innerHTML = ``;
         }, 300);
 
     }
+
 }
 customElements.define('añadir-nuevo-gasto', AniadirNuevoGastoComponent);

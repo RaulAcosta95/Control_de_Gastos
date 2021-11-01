@@ -15,11 +15,11 @@ export class ModificarGastoComponent extends LitElement{
 
     connectedCallback(){
         super.connectedCallback();
-        console.log('Connected Callback DetalleGastoComponent');
+        // console.log('Connected Callback DetalleGastoComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback DetalleGastoComponent');
+        // console.log('Disconnected Callback DetalleGastoComponent');
     }
     render(){
         return html `
@@ -115,7 +115,7 @@ export class ModificarGastoComponent extends LitElement{
                 }                    
             </style>
             <div id="modificaGastoComponent">
-                <button @click=${this._quitarComponenteModificaGastoComponent} id="buttonX">X</button>
+                <button @click=${this._quitarComponente} id="buttonX">X</button>
                 <h3>Modifica Gasto</h3>
                 <div id="formModificaGasto">
                     <form action="" id="formDatosNuevoGasto">
@@ -143,28 +143,31 @@ export class ModificarGastoComponent extends LitElement{
         this.cantidadGastoActual = e.target.value;
     }
     
-    _quitarComponenteModificaGastoComponent(){
-        let OverArticle = document.getElementById('OverArticle');
-
-        setTimeout(() => {
-                OverArticle.innerHTML = ``;
-        }, 300);
-
-    }
     _modificarGasto(){
+        
         let dataModificar = {
             nuevoTituloGasto: this.tituloGastoActual,
             nuevoDescripciónGasto: this.descripcionGastoActual,
             nuevoCantidadGasto: this.cantidadGastoActual,
             idAModificar: this.id
         }
+        
         this.dispatchEvent( new CustomEvent('ModificarDatosGasto', {
             detail: {data: dataModificar},
             bubbles: true,
             composed:true
         }));
+        
+        this._quitarComponente();
+    }
 
-        this._quitarComponenteModificaGastoComponent();
+    _quitarComponente(){
+        let OverArticle = document.getElementById('OverArticle');
+
+        setTimeout(() => {
+                OverArticle.innerHTML = ``;
+        }, 300);
+
     }
 }
 customElements.define('modificar-gasto', ModificarGastoComponent);

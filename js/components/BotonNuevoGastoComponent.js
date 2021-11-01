@@ -3,19 +3,14 @@ export class BotonNuevoGastoComponent extends LitElement{
     constructor(){
         super();
     }
-    static get Properties(){
-        return {
-
-        }
-    }
 
     connectedCallback( funcion){
         super.connectedCallback();
-        console.log('Connected Callback BotonNuevoGastoComponent');
+        // console.log('Connected Callback BotonNuevoGastoComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback BotonNuevoGastoComponent');
+        // console.log('Disconnected Callback BotonNuevoGastoComponent');
     }
 
     render(){

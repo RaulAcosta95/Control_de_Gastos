@@ -16,11 +16,11 @@ export class DetalleGastoComponent extends LitElement{
 
     connectedCallback(){
         super.connectedCallback();
-        console.log('Connected Callback DetalleGastoComponent');
+        // console.log('Connected Callback DetalleGastoComponent');
     }
     disconnectedCallback(){
         super.disconnectedCallback();
-        console.log('Disconnected Callback DetalleGastoComponent');
+        // console.log('Disconnected Callback DetalleGastoComponent');
     }
 
     render(){
@@ -131,21 +131,21 @@ export class DetalleGastoComponent extends LitElement{
         `
     }
 
-    _quitarComponenteDetalleGastoComponent(){
-        let OverArticle = document.getElementById('OverArticle');
-        setTimeout(() => {
-                OverArticle.innerHTML = ``;
-        }, 300);
-    }
-
     _modificarGasto(){
         let OverArticle = document.getElementById('OverArticle');
         setTimeout(() => {            
             OverArticle.innerHTML = ``;
             OverArticle.innerHTML = `
-                <modificar-gasto tituloGastoActual="${this.tituloGastoActual}" descripcionGastoActual="${this.descripcionGastoActual}" cantidadGastoActual="${this.cantidadGastoActual}" id="${this.id}"></modificar-gasto>
+            <modificar-gasto tituloGastoActual="${this.tituloGastoActual}" descripcionGastoActual="${this.descripcionGastoActual}" cantidadGastoActual="${this.cantidadGastoActual}" id="${this.id}"></modificar-gasto>
             `;
         }, 500);
+    }
+
+    _quitarComponenteDetalleGastoComponent(){
+        let OverArticle = document.getElementById('OverArticle');
+        setTimeout(() => {
+                OverArticle.innerHTML = ``;
+        }, 300);
     }
 }
 customElements.define('detalle-gasto', DetalleGastoComponent);

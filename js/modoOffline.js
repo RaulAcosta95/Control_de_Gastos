@@ -1,4 +1,3 @@
-console.log('Este Script');
 addEventListener('modoOffline', ()=>{
     console.log('fallback.html');
     document.location.href="fallback.html";
