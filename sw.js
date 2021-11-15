@@ -64,12 +64,12 @@ self.addEventListener("activate", (evt) => {
 self.addEventListener("fetch", (evt) => {
   if (navigator.onLine) {
   } else {
-    console.log("Offline");
-    this.dispatchEvent(
-      new CustomEvent("modoOffline", {
-        bubbles: true,
-        composed: true,
-      })
+      console.log("Offline");
+      this.dispatchEvent(
+        new CustomEvent("modoOffline", {
+          bubbles: true,
+          composed: true,
+        })
     );
     evt.respondWith(
       caches

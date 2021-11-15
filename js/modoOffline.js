@@ -6,7 +6,9 @@ addEventListener('modoOffline', ()=>{
 if(navigator.onLine) {
     console.log('Es online');
 } else {
-    console.log('Es Offline');
-    document.location.href="fallback.html";
+    setTimeout(() => {
+        console.log('Es Offline');
+        document.location.href="fallback.html";
+    }, 5000);
 
 }

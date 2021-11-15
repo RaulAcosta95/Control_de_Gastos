@@ -25,76 +25,12 @@ export class GastoEnListaComponent extends LitElement{
 
     render(){
         return html `
-            <style>
-                .gastoEnListaComponent *{
-                    margin:0;
-                    padding:0;
-                    transition:0.5s;
-                }
-                .gastoEnListaComponent{
-                    background-color: rgb(131, 204, 253);
+            <link rel="stylesheet" href="./css/GastoEnLista.css">
+            <link rel="stylesheet" href="./css/GastoEnListaDesktop.css">
 
-                    width: 90vw;
-
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-
-                    font-family: sans-serif;
-
-                    cursor:help;
-
-                    border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 0px solid #000000;
-
-                    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-                    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-                    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
-
-                    display: flex;
-                    align-items: center;
-                }
-                .gastoEnListaComponent:active{
-                    background-color: rgb(185, 222, 247);
-                }
-                .gastoEnListaComponent .contenedorInfo{
-                    width: 90%;
-                }
-                .gastoEnListaComponent .contenedorInfo:hover{
-                    background-color: rgb(193, 228, 252);
-
-                }
-                .gastoEnListaComponent .contenedorInfo *{
-                    margin:10px;
-                }
-                .gastoEnListaComponent .contenedorBoton{
-                    width: 10%;
-                    height: 100%;
-                    display: flex;
-                    justify-content:flex-end;
-                    align-items:center;
-                }
-                .gastoEnListaComponent button{
-                    background-color:rgba(172, 128, 128,.0);
-                    margin: 10px;
-                    margin-right:20px;
-                    border:none;
-                    cursor:pointer;
-                    width:25px;
-                }
-                .gastoEnListaComponent button img{
-                    width:30px;
-                }
-
-                p{
-                    font-weight:bold;
-                    color:rgb(194, 134, 6);
-                }
-            </style>
             <div class="gastoEnListaComponent">
                 <div @click=${this._mostrarComponenteVerDetalleGasto} class="contenedorInfo">
-                    <h3>${this.tituloGastoActual} </h3>
+                    <h3>${this.tituloGastoActual}</h3>
                     <p>$${this.cantidadGastoActual}</p>
                 </div>
                 <div class="contenedorBoton">
