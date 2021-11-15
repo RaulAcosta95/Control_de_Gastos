@@ -1,7 +1,15 @@
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
     .gastoEnListaComponent{
-        width: 20vw;
-
+        width: 30vw;
+        margin: 1vw;
     }
 
-} */
+    #listaGastos{
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+
+        margin-top: 20px;
+    }
+
+}

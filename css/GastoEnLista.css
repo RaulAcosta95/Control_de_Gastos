@@ -59,7 +59,9 @@
 .gastoEnListaComponent button img{
     width:30px;
 }
-
+.gastoEnListaComponent button img:hover{
+    width:35px;
+}
 p{
     font-weight:bold;
     color:rgb(194, 134, 6);

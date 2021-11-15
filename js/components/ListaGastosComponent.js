@@ -24,6 +24,7 @@ export class ListaGastosComponent extends LitElement{
 
     render(){
         return html `
+        <link rel="stylesheet" href="./css/GastoEnListaDesktop.css">
             <div id="listaGastos">
             </div>
             `
